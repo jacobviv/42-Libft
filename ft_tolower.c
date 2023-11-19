@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbriongo <rbriongo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 15:11:59 by rbriongo          #+#    #+#             */
-/*   Updated: 2023/03/28 17:03:57 by rbriongo         ###   ########.fr       */
+/*   Created: 2023/03/28 17:55:21 by rbriongo          #+#    #+#             */
+/*   Updated: 2023/03/28 18:24:04 by rbriongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_tolower(int c)
 {
-	if (c >= ' ' && c <= '~')
+	if (c >= 'A' && c <= 'Z')
 	{
-		return (1);
+		c = c - 'A' + 'a';
 	}
-	else
-		return (0);
+	return (c);
 }
 
-// int main()
+// int	main(void)
 // {
-//     int  c = 109;
-//     if (ft_isprint(c))
-//     {
-//         write(1, &c, 1);
-//         write(1, " is a print\n", 12);
-//     }
-//     else
-//     {
-//         write(1, &c, 1);
-//         write(1, " is not a print\n", 16);
-//     }
-//     return (0);
+// 	int c;
+
+// 	c = 'R';
+// 	write(1, &c, 1);
+// 	write(1, " is the uppercase\n", 18);
+// 	c = ft_tolower(c);
+// 	write(1, &c, 1);
+// 	write(1, " is the lowercase\n", 18);
+// 	return (c);
 // }
