@@ -6,7 +6,7 @@
 /*   By: rbriongo <rbriongo@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 18:26:11 by rbriongo          #+#    #+#             */
-/*   Updated: 2023/12/09 18:27:39 by rbriongo         ###   ########.fr       */
+/*   Updated: 2023/12/10 18:25:15 by rbriongo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int	main(void)
-{
-	int	num;
+// int	main(void)
+// {
+// 	int	num;
 
-	num = 2;
-	printf("SOLUCION: %s\n", ft_itoa(num));
-}
+// 	num = 2;
+// 	printf("SOLUCION: %s\n", ft_itoa(num));
+// }

@@ -6,7 +6,7 @@
 #    By: rbriongo <rbriongo@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/28 15:13:12 by rbriongo          #+#    #+#              #
-#    Updated: 2023/12/09 18:27:10 by rbriongo         ###   ########.fr        #
+#    Updated: 2023/12/10 18:23:53 by rbriongo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC += ft_strncmp.c
 SRC += ft_memchr.c
 SRC += ft_memcmp.c
 SRC += ft_strnstr.c
-sRC += ft_atoi.c
+SRC += ft_atoi.c
 SRC += ft_calloc.c
 SRC += ft_strdup.c
 SRC += ft_substr.c
@@ -40,17 +40,24 @@ SRC += ft_strjoin.c
 SRC += ft_strtrim.c
 SRC += ft_split.c
 SRC += ft_itoa.c
+SRC += ft_strmapi.c
+SRC += ft_striteri.c
+SRC += ft_putchar_fd.c
+SRC += ft_putstr_fd.c
+SRC += ft_putendl_fd.c
+SRC += ft_putnbr_fd.c
 
-OBJECTS = *.o
+OBJECTS = $(SRC:.c=.o)
+
+%.o: %.c
+	gcc $(CFLAGS) $(INCFLAGS) -c $< -o $@
 
 INCLUDE = libft.h
 
 all: $(NAME)
 
-$(NAME):
-	@gcc -c -Wall -Wextra -Werror $(SRC) -I $(INCLUDE)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+$(NAME) : $(OBJECTS)
+	ar rcs $(NAME) $(OBJECTS)
 
 clean:
 	@/bin/rm -f $(OBJECTS)
